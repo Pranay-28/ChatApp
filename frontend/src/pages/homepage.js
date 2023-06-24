@@ -9,15 +9,16 @@ const homepage = () => {
         d='flex'
         justifyContent="center"
         p={3}
-        bg={"white"}
+        bg={"gray.800"}
         w="100%"
         m="40px 0 15px 0"
         borderRadius="lg"
         borderWidth="1px"
+        borderColor="gray.800" 
       >
-        <Text fontSize='4xl' fontFamily='Work sans' align='center'>ChatOasis</Text>
+        <Text color="teal.400" fontSize='4xl' fontFamily='Work sans' align='center'><b>ChatOasis</b></Text>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+      <Box bg="gray.800" w="100%" p={4} borderRadius="lg" borderWidth="1px" borderColor={"gray.800"}>
         <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
             <Tab>Login</Tab>

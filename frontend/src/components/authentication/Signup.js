@@ -132,55 +132,60 @@ const Signup = () => {
   return (
     <VStack spacing='5px' color='black'>
         <FormControl id='first-name' isRequired>
-            <FormLabel>
+            <FormLabel color={"teal.400"}>
                 Name
             </FormLabel>
             <Input
+            borderColor={"teal"}
             placeholder='Enter Your Name'
             onChange={(e)=>setName(e.target.value)}/>
         </FormControl>
         <FormControl id='email' isRequired>
-            <FormLabel>
+            <FormLabel color={"teal.400"}>
                 Email
             </FormLabel>
             <Input
+            borderColor={"teal"}
             placeholder='Enter Your Email'
             onChange={(e)=>setEmail(e.target.value)}/>
         </FormControl>
         <FormControl id='password' isRequired>
-            <FormLabel>Password</FormLabel>
+            <FormLabel color={"teal.400"}>Password</FormLabel>
             <InputGroup>
                 <Input
+                borderColor={"teal"}
                 type={show?'text':'password'}
                 placeholder='Enter Your password'
                 onChange={(e)=>setPassword(e.target.value)}/>
                 <InputRightElement width='4.5rem'>
-                    <Button h='1.75rem' size='sm' onClick={handleClick}>
+                    <Button bg={"teal.600"} h='1.75rem' size='sm' onClick={handleClick}>
                         {show?'hide':'show'}
                     </Button>
                 </InputRightElement>
             </InputGroup>
         </FormControl>
         <FormControl id='password' isRequired>
-            <FormLabel>Confirm password</FormLabel>
+            <FormLabel color={"teal.400"}>Confirm password</FormLabel>
             <InputGroup size='md'>
                 <Input
+                borderColor={"teal"}
                 type={show?'text':'password'}
                 placeholder='Confirm password'
                 onChange={(e)=>setConfirmpassword(e.target.value)}/>
-                <InputRightElement width='4.5rem'>
-                    <Button h='1.75rem' size='sm' onClick={handleClick}>
+                <InputRightElement  width='4.5rem'>
+                    <Button bg="teal.600" h='1.75rem' size='sm' onClick={handleClick}>
                         {show?'hide':'show'}
                     </Button>
                 </InputRightElement>
             </InputGroup>
         </FormControl>
         <FormControl id='pic' isRequired>
-            <FormLabel>
+            <FormLabel color={"teal.400"}>
                 Upload your picture
             </FormLabel>
             <Input
             type="file"
+            borderColor={"teal"}
             p={1.5}
             accept="image/*"
             placeholder='Enter Your Email'
