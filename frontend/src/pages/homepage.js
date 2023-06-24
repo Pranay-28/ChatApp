@@ -15,7 +15,7 @@ const homepage = () => {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize='4xl' fontFamily='Work sans' align='center'>Talk-A-Tive</Text>
+        <Text fontSize='4xl' fontFamily='Work sans' align='center'>ChatOasis</Text>
       </Box>
       <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
         <Tabs isFitted variant="soft-rounded">
