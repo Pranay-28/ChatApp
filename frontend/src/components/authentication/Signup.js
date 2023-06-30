@@ -36,7 +36,7 @@ const Signup = () => {
             title: "Please Select a JPEG or PNG Image!",
             status: "warning",
             duration: 5000,
-            isClosable: true,
+            isClosable: true,   
             position: "bottom",
         });
         setLoading(false);

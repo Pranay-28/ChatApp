@@ -50,11 +50,13 @@ const accessChat = asyncHandler(async (req, res) => {
 
 const fetchChats = asyncHandler( async (req, res) => {
   try {
+   let results;
+
     Chat.find({ users: { $elemMatch: { $eq: req.user._id}}})
       .populate("users", "-password")
       .populate("groupAdmin", "-password")
-      .populate("lateMessage")
-      .sort({ updateAt: -1})
+      .populate("latestMessage")
+      .sort({ updatedAt: -1})
       .then(async(result) => {
         results = await User.populate(results, {
             path: "latestMessage.sender",
@@ -68,13 +70,13 @@ const fetchChats = asyncHandler( async (req, res) => {
 });
 
 
-const createGroupChat = asyncHandler(async () => {
+const createGroupChat = asyncHandler(async (req, res) => {
  if(!req.body.users || !req.body.name){
-    return res.status(400).send({ message: "Please Fill all the feields"});
+    return res.status(400).send({ message: "Please Fill all the feilds"});
 
  }
 
- var users = JSON.parse(res.body.users);
+ var users = JSON.parse(req.body.users);
 
  if(users.length < 2){
     return res.status(400).send("More than 2 users are required to form a group chat");
@@ -103,7 +105,7 @@ const createGroupChat = asyncHandler(async () => {
 const renameGroup = asyncHandler( async(req, res) => {
  const { chatId, chatName } = req.body;
 
- const updateChat = await Chat.findByIdAndUpdate(
+ const updatedChat = await Chat.findByIdAndUpdate(
     chatId,
     {
         chatName,
